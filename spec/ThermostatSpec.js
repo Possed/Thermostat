@@ -34,4 +34,9 @@ describe("Thermostat", function() {
     t.setmaxTemp();
     expect(t.maxTemp).toEqual(32);
   });
+
+  it('when reset, then currentTemp is set to 20', function() {
+    t.reset();
+    expect(t.currentTemp).toEqual(20);
+  })
 });
