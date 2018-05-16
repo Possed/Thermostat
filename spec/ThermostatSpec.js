@@ -18,4 +18,10 @@ describe("Thermostat", function() {
     t.decrease(10)
     expect(t.currentTemp).toEqual(10);
   });
+
+  it("should reaise error when temperature is below ${t.minimumTemp}", function() {
+    expect(function() {
+      t.decrease(15);
+    }).toThrowError(`Temp too low! Minimum temp is ${t.minimumTemp}`);
+  });
 });
