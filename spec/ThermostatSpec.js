@@ -41,7 +41,7 @@ describe("Thermostat", function() {
   })
 
   it('when energy usage is less than 18, return low-usage', function() {
-    t.energy = 15
+    t.currentTemp = 15
     expect(t.energyUsage()).toBe("Low usage");
   })
 });
