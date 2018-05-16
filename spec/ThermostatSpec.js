@@ -24,4 +24,14 @@ describe("Thermostat", function() {
       t.decrease(15);
     }).toThrowError(`Temp too low! Minimum temp is ${t.minimumTemp}`);
   });
+
+  it("power saving mode is on, max temp is 25", function() {
+    expect(t.maxTemp).toEqual(25);
+  });
+
+  it("power saving mode is off, max temp is 32", function() {
+    t.powerSaving = false
+    t.setmaxTemp();
+    expect(t.maxTemp).toEqual(32);
+  });
 });
