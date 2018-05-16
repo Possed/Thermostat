@@ -13,4 +13,9 @@ describe("Thermostat", function() {
     t.increase(10)
     expect(t.currentTemp).toEqual(30);
   });
+
+  it("should decrease the temperature", function() {
+    t.decrease(10)
+    expect(t.currentTemp).toEqual(10);
+  });
 });
