@@ -44,4 +44,14 @@ describe("Thermostat", function() {
     t.currentTemp = 15
     expect(t.energyUsage()).toBe("Low usage");
   })
+
+  it('when energy usage is less than 18, return low-usage', function() {
+    t.currentTemp = 24
+    expect(t.energyUsage()).toBe("Medium usage");
+  })
+
+  it('when energy usage is less than 18, return low-usage', function() {
+    t.currentTemp = 25
+    expect(t.energyUsage()).toBe("High usage");
+  })
 });
